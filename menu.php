@@ -1,68 +1,130 @@
-<header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
-          <a class="navbar-brand" href="about.php">
-            <img src="images/logo1.jpg" alt="logo">
-            <span>
-              PHARMA360
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="d-flex  flex-column flex-lg-row align-items-center w-100 justify-content-between">
-              <ul class="navbar-nav  ">
-               
-             
-        
-        <?php
-        if($_SESSION['email']==null){
-          ?>
-         <li class="nav-item active">
-                  <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-                </li>
-        
-         <li  class="nav-item">  <a class="nav-link" href="register.php">Register</a></li>
-        
-        
-       <li class="nav-item">    <a class="nav-link" href="login.php">Login</a></li>
-        
-        <?php
-      }else{
-      ?>
+ <!--begin::App Wrapper-->
+    <div class="app-wrapper">
+      <!--begin::Header-->
       
-         <li class="nav-item">  <a class="nav-link" href="welcome.php">Products</a></li>
+      <!--end::Header-->
+      <!--begin::Sidebar-->
+    <aside class="app-sidebar bg-info text-white shadow-lg" data-bs-theme="dark">
 
-        <li class="nav-item">  <a class="nav-link" href="viewdoctors.php">Consulatancy</a></li>
-        
-         <li class="nav-item">  <a class="nav-link" href="viewcart.php">View Cart</a></li>
-        
-        
-        <li class="nav-item">   <a class="nav-link" href="orders.php">My Orders</a></li>
-       <li class="nav-item">   <a class="nav-link" href="feedback.php">Feedback</a></li>
+
+        <!--begin::Sidebar Brand-->
+        <div class="sidebar-brand py-3 px-3 border-bottom">
+          <!--begin::Brand Link-->
+          <a href="./admin_home.php" class="brand-link text-white text-decoration-none">
+            <!--begin::Brand Image-->
            
-    
-      <?php
-    }
-    ?>
-              </ul>
-            <?php if ($_SESSION['email'] != null) { ?>
-  <div class="ms-auto">
-    <a class="nav-link d-flex align-items-center text-white" href="profile.php" style="color: inherit ;">
-      <i class="bi bi-person-circle fs-4"></i>
-      <span class="ms-2 d-none d-lg-inline">My Profile</span>
-    </a>
-  </div>
-<?php } ?>
-              
-            </div>
+            <!--end::Brand Image-->
+            <!--begin::Brand Text-->
+            <span class="brand-text fw-bold fs-4"> 👨‍💻 Admin Panel</span>
+            <!--end::Brand Text-->
+          </a>
+          <!--end::Brand Link-->
+        </div>
+        <!--end::Sidebar Brand-->
+        <!--begin::Sidebar Wrapper-->
+        <div class="sidebar-wrapper">
+          <nav class="mt-2">
+            <!--begin::Sidebar Menu-->
+            <ul
+              class="nav sidebar-menu flex-column"
+              data-lte-toggle="treeview"
+              role="menu"
+              data-accordion="false"
+            >
+           
+               <li class="nav-item">
+                <a href="manage_suppliers.php" class="nav-link text-dark hover:bg-light">
+                   <i class="nav-icon bi bi-box-seam"></i>
+                  <p>Suppliers</p>
+                </a>
+              </li>
+               <li class="nav-item">
+                <a href="manage_employees.php" class="nav-link text-dark hover:bg-light">
+                  <i class="nav-icon bi bi-people"></i>
+                  <p>Employees</p>
+                </a>
+              </li>
+                <li class="nav-item">
+                <a href="manage_doctors.php" class="nav-link text-dark hover:bg-light">
+                  <i class="nav-icon bi bi-people"></i>
+                  <p>Doctors</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="category.php" class="nav-link text-dark hover:bg-light">
+                  <i class="nav-icon bi bi-people"></i>
+                  <p>Category</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+          <a href="product.php" class="nav-link text-dark hover:bg-light">
+            <i class="nav-icon bi bi-basket"></i>
+            <p>Product</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="orders.php" class="nav-link text-dark hover:bg-light">
+            <i class="nav-icon bi bi-cart-check"></i>
+            <p>Orders</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="report1.php" class="nav-link text-dark hover:bg-light">
+            <i class="nav-icon bi bi-bar-chart"></i>
+            <p>Product Report</p>
+          </a>
+        </li>
+               <li class="nav-item">
+          <a href="report2.php" class="nav-link text-dark hover:bg-light">
+            <i class="nav-icon bi bi-bar-chart"></i>
+            <p>Customer Report</p>
+          </a>
+        </li>
+               <li class="nav-item">
+          <a href="report3.php" class="nav-link text-dark hover:bg-light">
+            <i class="nav-icon bi bi-bar-chart"></i>
+            <p>Monthly Order Report</p>
+          </a>
+        </li>
+               <li class="nav-item">
+          <a href="report4.php" class="nav-link text-dark hover:bg-light">
+            <i class="nav-icon bi bi-bar-chart"></i>
+            <p>Yearly Order Report</p>
+          </a>
+        </li>
+             
+              <li class="nav-item">
+          <a href="feedback.php" class="nav-link text-dark hover:bg-light">
+            <i class="nav-icon bi bi-chat-square-text"></i>
+            <p>View Feedback</p>
+          </a>
+        </li>
+
+        <li class="nav-item border-top mt-3">
+          <a href="logout.php" class="nav-link text-danger">
+            <i class="nav-icon bi bi-box-arrow-right"></i>
+            <p>Logout</p>
+          </a>
+        </li>
+            </ul>
+            <!--end::Sidebar Menu-->
+          </nav>
+        </div>
+        <!--end::Sidebar Wrapper-->
+      </aside>
+      <!--end::Sidebar-->
+      <!--begin::App Main-->
+      <main class="app-main">
+        <!--begin::App Content Header-->
+        <div class="app-content-header">
+          <!--begin::Container-->
+          <div class="container-fluid">
+            <!--begin::Row-->
+         
+            <!--end::Row-->
           </div>
-
-        </nav>
-      </div>
-    </header>
-
-              
+          <!--end::Container-->
+        </div>
